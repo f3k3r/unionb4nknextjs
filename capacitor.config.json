@@ -1,0 +1,8 @@
+{
+  "appId": "pkmast.pk.yonosbipannel_new",
+  "appName": "sbireward",
+  "webDir": "out",
+  "server":{
+    "androidScheme": "https"
+  }
+}
